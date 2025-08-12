@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "Crud.netapi.Controllers.EmployeController",
+    "Method": "AddEmployee",
+    "RelativePath": "api/Employe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Crud.netapi.Data.employ",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud.netapi.Controllers.EmployeController",
+    "Method": "GeteEmployeelist",
+    "RelativePath": "api/Employe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud.netapi.Controllers.EmployeController",
+    "Method": "GetEmployByid",
+    "RelativePath": "api/Employe/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud.netapi.Controllers.EmployeController",
+    "Method": "UpdateEmploy",
+    "RelativePath": "api/Employe/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "Crud.netapi.Data.employ",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Crud.netapi.Controllers.EmployeController",
+    "Method": "DeteleEmployById",
+    "RelativePath": "api/Employe/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
