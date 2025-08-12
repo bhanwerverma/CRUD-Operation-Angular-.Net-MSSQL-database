@@ -1,0 +1,76 @@
+<div class="example-flex-container flex justify-end p-2">
+ <button mat-raised-button color="primary" routerLink="/AddEmploy">
+    <mat-icon>add_box</mat-icon> 
+    Add Employ
+ </button>
+</div>
+
+@if(EmployList && EmployList.length>0) {
+<div class="mat-elevation-z8 p-3">
+  <table mat-table [dataSource]="EmployList">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>id</th>
+      <td mat-cell *matCellDef="let element ,let i = index">{{ i + 1 }}</td>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Email -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- Phone -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Phone</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+    <!-- Salary -->
+    <ng-container matColumnDef="salary">
+      <th mat-header-cell *matHeaderCellDef>Salary</th>
+      <td mat-cell *matCellDef="let element">{{ element.salary | currency : "INR"  }}</td>
+    </ng-container>
+
+     <!-- Age -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>Age</th>
+      <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+    </ng-container>
+
+    <!-- Action Buttons -->
+    <ng-container matColumnDef="Action Button">
+      <th mat-header-cell *matHeaderCellDef>Action Buttons</th>
+      <td mat-cell *matCellDef="let element">
+        <section>
+          <div class="example-button-row">
+            <div class="example-flex-container">
+              <button mat-mini-fab (click)="onDelete(element.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-mini-fab class="ms-2" [routerLink]="['EditEmploy',element.id]">
+                <mat-icon>edit_square</mat-icon>
+              </button>
+            </div>
+          </div>
+        </section>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+} @if(!EmployList) {
+<p>No Data Found</p>
+
+}

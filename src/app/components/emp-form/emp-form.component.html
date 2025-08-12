@@ -1,0 +1,60 @@
+<div class="p-4" >
+  <div style="font-size: 25px;" class="mb-2">
+    <h3 *ngIf="isEditMode">Edit Employee Details</h3>
+    <h3 *ngIf="!isEditMode">Create Employee Form</h3>
+  </div>
+  <form [formGroup]="EmployeeForm" (ngSubmit)="onSubmit()">
+    <div class="w-full flex flex-wrap">
+      <mat-form-field  class="w-full">
+        <mat-label>Name</mat-label>
+        <input
+          type="text" matInput placeholder="Name" formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap" >
+      <mat-form-field  class="w-full">
+        <mat-label>Email</mat-label>
+        <input
+          type="email" matInput placeholder="Email" formControlName="email"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap">
+      <mat-form-field  class="w-full">
+        <mat-label>Salary</mat-label>
+        <input
+          type="text" matInput placeholder="Salary" formControlName="salary"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap">
+      <mat-form-field  class="w-full">
+        <mat-label>Age</mat-label>
+        <input
+          type="number" matInput placeholder="Age" formControlName="age"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="w-full flex flex-wrap">
+      <mat-form-field  class="w-full">
+        <mat-label>Phone</mat-label>
+        <input
+          type="number" matInput placeholder="Phone" formControlName="phone"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="flex justify-center">
+        <button mat-raised-button *ngIf="isEditMode" color="primary"  [disabled]="EmployeeForm.invalid" > <mat-icon>add-box</mat-icon> Update details</button>
+
+        <button mat-raised-button *ngIf="!isEditMode" color="primary" type="submit" [disabled]="EmployeeForm.invalid"> <mat-icon>add-box</mat-icon> Add Employ</button>
+    </div>
+
+   
+  </form>
+</div>
